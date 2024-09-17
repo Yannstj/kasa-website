@@ -1,6 +1,15 @@
+import Banner from "../../components/Banner";
+import Card from "../../components/Card";
+import '../../styles/card.scss'
+
 function Home() {
   return (
-    <h1>KASA</h1>
+    <div>
+    <Banner />
+    <Card />
+    </div>
+    
+    
   );
 }
 

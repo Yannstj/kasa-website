@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import Logement from './pages/Logement';
 import About from './pages/About';
 import Error from './pages/Error';
-//import Footer from './components/Footer';
+import Footer from './components/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,7 +18,7 @@ ReactDOM.render(
     <Route path='/about' element={<About />} />
     <Route path="*" element={<Error />} />
   </Routes>
-  {/* <Footer /> */}
+  <Footer />
 </Router>
   </React.StrictMode>,
   document.getElementById('root'),
