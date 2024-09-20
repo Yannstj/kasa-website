@@ -1,6 +1,11 @@
+.banner{
+    background-image: url(../../src/assets/banner-falaise.jpg);
+    height: 100%;
+}
+
 .bannerWrapper{
     border: solid black 2px;
     .banner__background{
-        height: 100px;
+        height: 500px;
     }
 }
