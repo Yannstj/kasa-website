@@ -1,11 +1,15 @@
-.banner{
-    background-image: url(../../src/assets/banner-falaise.webp);
-    height: 100%;
+.banner {
+  background-image: url(../../src/assets/banner-falaise.webp);
+  //height: 100%;
 }
 
-.bannerWrapper{
-    border: solid black 2px;
-    .banner__background{
-        height: 500px;
-    }
+.bannerWrapper {
+  border: solid black 2px;
+  //.banner__background {
+  //height: 500px;
+  // }
 }
+
+// DIMENSIONS RESPONSIVE
+// >1024 px pour les ordinateurs / >= 768 px tablette /
+// >768 px téléphones (min 320px)
