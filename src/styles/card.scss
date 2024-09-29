@@ -5,22 +5,25 @@ $secondary-color: #ff6060;
   background: linear-gradient($color, 90%, black);
 }
 .cardBox {
-  width: 1240px;
+  width: 1440px;
+  margin-top: 40px;
   background-color: grey;
+  border-radius: 25px;
 }
 .cardWrapper {
-  padding: 10px;
-  border: solid black 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 60px 60px;
+  gap: 60px;
+  //border: solid black 1px;
   .card {
     font-family: 'Montserrat';
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width: 300px;
-    height: 300px;
+    width: 395px;
+    height: 395px;
     background-color: $secondary-color;
     @include card-filter($secondary-color);
-    border-radius: 10px;
+    border-radius: 15px;
     .card__title {
       color: $main-color;
     }
