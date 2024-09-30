@@ -1,19 +1,24 @@
 .bannerBox {
+  width: 1240px;
+  height: 210px;
+  font-family: 'Montserrat';
+  font-size: 30px;
+  color: white;
+  background-image: url(../../src/assets/banner-cliff.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-position-y: 55%;
+  overflow: hidden;
   margin-top: 40px;
-}
-
-.banner {
-  background-image: url(../../src/assets/banner-falaise.webp);
-  //height: 100%;
+  border-radius: 25px;
 }
 
 .bannerWrapper {
-  width: 1440px;
-  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
   border-radius: 25px;
-  border: solid black 2px;
-
-  //.banner__background {
-  //height: 500px;
-  // }
 }

@@ -5,26 +5,30 @@ $secondary-color: #ff6060;
   background: linear-gradient($color, 90%, black);
 }
 .cardBox {
-  width: 1440px;
+  width: 1240px;
   margin-top: 40px;
-  background-color: grey;
+  background-color: #f6f6f6;
   border-radius: 25px;
 }
 .cardWrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 60px 60px;
-  gap: 60px;
+  padding: 43px 43px;
+  gap: 40px;
   //border: solid black 1px;
   .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     font-family: 'Montserrat';
-    width: 395px;
-    height: 395px;
+    width: 355px;
+    height: 355px;
     background-color: $secondary-color;
     @include card-filter($secondary-color);
     border-radius: 15px;
     .card__title {
+      margin-left: 13px;
       color: $main-color;
     }
   }

@@ -3,6 +3,8 @@
 # Added by myslef
 /.vscode
 /.prettierrc
+/.eslintrc
+/.eslintcache
 
 # dependencies
 /node_modules

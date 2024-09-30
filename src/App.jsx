@@ -1,12 +1,13 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import '../src/styles/app.scss'
+import '../src/styles/global.scss'
+import Footer from './components/Footer'
 import Header from './components/Header'
-import Home from './pages/Home'
-import Logement from './pages/Logement'
 import About from './pages/About'
 import Error from './pages/Error'
-import Footer from './components/Footer'
-import '../src/styles/app.scss'
+import Home from './pages/Home'
+import Logement from './pages/Logement'
 
 function App() {
   return (
