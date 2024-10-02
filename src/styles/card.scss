@@ -20,15 +20,26 @@ $secondary-color: #ff6060;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    padding: 0; /*Remove default settings of figure tag*/
+    margin: 0; /*Remove default settings of figure tag*/
     font-family: 'Montserrat';
     width: 355px;
     height: 355px;
-    background-color: $secondary-color;
-    @include card-filter($secondary-color);
+    overflow: hidden;
     border-radius: 15px;
+    &__cover {
+      width: 355px;
+      height: 355px;
+      position: relative;
+      object-fit: cover;
+    }
     &__title {
-      margin-left: 13px;
       color: $main-color;
+      position: absolute;
+      font-size: 1.5em;
+      font-weight: bolder;
+      background: transparent;
+      width: 355px;
     }
   }
 }
