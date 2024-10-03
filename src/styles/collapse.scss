@@ -1,0 +1,19 @@
+$text-color: #ffffff;
+$background-title-color: #ff6060;
+$background-color: #f6f6f6;
+
+.collapse {
+  border: 2px solid black;
+  border-radius: 10px;
+  &__title {
+    color: $text-color;
+    background-color: $background-title-color;
+    width: 100%;
+  }
+  &__content {
+    background-color: $background-color;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 2px solid blue;
+  }
+}

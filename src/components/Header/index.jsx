@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import companyLogo from '../../assets/logo.svg'
 
 function Header() {
@@ -10,14 +10,24 @@ function Header() {
         </div>
         <ul className="navbar__link">
           <li>
-            <Link to="/" className="navbar__homepage">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `navbar__homepage ${isActive ? 'navbar__active' : ''}`
+              }
+            >
               Accueil
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/about" className="navbar__about">
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `navbar__about ${isActive ? 'navbar__active' : ''}`
+              }
+            >
               À propos
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

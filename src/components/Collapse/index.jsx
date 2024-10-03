@@ -1,8 +1,18 @@
+import '../../styles/collapse.scss'
+
 function Collapse() {
   return (
-    <section>
-      <h1>Titre</h1>
-      <p>Du contenu sur un thème pour ce titre</p>
+    <section className="collapse">
+      <div className="collapse__title">
+        <h2>Fiabilité</h2>
+      </div>
+      <div className="collapse__content">
+        <p>
+          Les annonces postées sur Kasa garantissent une fiabilité total. Les
+          photos sont conformes aux logements, et toutes les information sont
+          régulièrement vérifiées par nos équipes.
+        </p>
+      </div>
     </section>
   )
 }
