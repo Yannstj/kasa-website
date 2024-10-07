@@ -1,4 +1,21 @@
+// DIMENSIONS RESPONSIVE
+// >1024 px pour les ordinateurs / >= 768 px tablette /
+// >768 px téléphones (min 320px)
+
 :root {
   display: flex;
   justify-content: center;
+  height: 100%;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; /* Hauteur minimum pour couvrir tout l'écran */
+  margin: 0;
+  padding: 0;
+}
+.main-content {
+  width: 1440px;
+  flex: 1;
 }

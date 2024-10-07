@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import '../src/index.scss'
-import '../src/styles/app.scss'
 import '../src/styles/footer.scss'
 import '../src/styles/global.scss'
 import '../src/styles/header.scss'
@@ -18,12 +17,14 @@ function App() {
       <Router>
         <div className="App">
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/logement" element={<Logement />} />
-            <Route path="/about" element={<About />} />
-            <Route path="*" element={<Error />} />
-          </Routes>
+          <div className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/logement" element={<Logement />} />
+              <Route path="/about" element={<About />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
+          </div>
           <Footer />
         </div>
       </Router>

@@ -1,9 +1,6 @@
 $main-color: #ffffff;
 $secondary-color: #ff6060;
 
-@mixin card-filter($color) {
-  background: linear-gradient($color, 90%, black);
-}
 .cardBox {
   width: 1240px;
   margin-top: 40px;

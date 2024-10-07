@@ -2,16 +2,12 @@
   font-family: 'Montserrat';
   display: flex;
   flex-direction: column;
-  gap: 25px;
   align-items: center;
+  gap: 25px;
+  margin-top: 60px;
   background-color: black;
-  position: relative;
   width: 100vw; /* Utilise toute la largeur de la fenêtre */
   height: 155px;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw; /* Décale le footer pour qu'il commence à l'extrême gauche de la fenêtre */
-  margin-top: 60px;
   &__logo {
     width: 100px;
     padding-top: 30px;

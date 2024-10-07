@@ -3,14 +3,13 @@
   justify-content: space-between;
   margin-top: 20px;
   width: 1240px !important;
-  margin-left: 100px; // rencentre le header par rapport à l'app
   &__logo {
     width: 150px;
   }
   &__link {
     font-family: 'Montserrat';
-    font-size: large;
-    font-weight: 400;
+    font-size: larger;
+    font-weight: 500;
     display: flex;
     justify-content: space-between;
     align-items: center;
