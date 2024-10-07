@@ -3,7 +3,7 @@ import '../../styles/card.scss'
 
 function Card() {
   return (
-    <div className="cardBox">
+    <div className="cardContainer">
       <section className="cardWrapper">
         {logementList.map((logement) => (
           <figure className="card" key={logement.id}>

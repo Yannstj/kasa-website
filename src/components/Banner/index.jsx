@@ -6,7 +6,7 @@ function Banner() {
   const location = useLocation()
   return (
     <div
-      className={`bannerBox ${
+      className={`bannerContainer ${
         location.pathname === '/about' ? 'bannerAbout' : 'bannerHome'
       }`}
     >
