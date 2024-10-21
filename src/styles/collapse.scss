@@ -5,12 +5,14 @@ $background-color: #f6f6f6;
 h2 {
   margin-left: 10px;
 }
+
 .collapse {
   font-family: 'Montserrat';
   width: 1240px;
   border-radius: 12px;
   position: relative;
-  margin-top: 80px; // TEST for more than one collapse component
+  margin-top: 30px; // TEST for more than one collapse component
+  //border: green solid 3px;
 
   &__title {
     color: $text-color;
@@ -27,16 +29,23 @@ h2 {
   &__button {
     all: unset;
     position: relative;
-    left: 1100px;
+    left: 1085px;
+  }
+  &__icon {
+    font-size: 25px;
   }
   &__content {
     display: inline-block;
-    visibility: hidden;
     width: 100%;
     background-color: $background-color;
-    position: absolute;
-    top: 38px;
-    border-radius: 8px;
+    position: relative;
+    //top: 38px;
+    top: -3px;
+    border-radius: 0 0 8px 8px;
     z-index: 1;
+  }
+  &__content p {
+    margin-left: 15px;
+    font-weight: 300;
   }
 }

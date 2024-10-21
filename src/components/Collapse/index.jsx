@@ -8,7 +8,7 @@ function Collapse() {
       <div className="collapse__title">
         <h2>Fiabilité</h2>
         <button className="collapse__button" type="button">
-          <FontAwesomeIcon icon={faChevronUp} />
+          <FontAwesomeIcon icon={faChevronUp} className="collapse__icon" />
         </button>
       </div>
       <div className="collapse__content">
