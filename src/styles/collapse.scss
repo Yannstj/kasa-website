@@ -10,12 +10,12 @@ h2 {
   width: 1240px;
   border-radius: 12px;
   position: relative;
-  margin-top: 80px;
+  margin-top: 80px; // TEST for more than one collapse component
 
   &__title {
     color: $text-color;
     background-color: $background-title-color;
-    position: relative; // if not z-index doesn't
+    position: relative; // if not z-index doesn't work
     display: flex;
     //justify-content: space-between;
     align-items: center;
@@ -31,6 +31,7 @@ h2 {
   }
   &__content {
     display: inline-block;
+    visibility: hidden;
     width: 100%;
     background-color: $background-color;
     position: absolute;

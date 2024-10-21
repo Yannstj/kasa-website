@@ -9,6 +9,10 @@ function About() {
       <Banner />
       <Collapse />
       <Collapse />
+      <Collapse />
+      <Collapse />
+      <Collapse />
+      <Collapse />
       {/* test with 2 collapse elem */}
     </div>
   )
