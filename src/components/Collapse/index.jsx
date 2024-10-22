@@ -7,17 +7,17 @@ function Collapse({ collapseContent }) {
   return (
     <div>
       {collapseContent.map(({ title, content, key }) => (
-        <section className="collapse" key={key}>
-          <div className="collapse__title">
+        <details className="collapse" key={key}>
+          <summary className="collapse__title">
             <h2>{title}</h2>
-            <button className="collapse__button" type="button">
+            <span className="collapse__button">
               <FontAwesomeIcon icon={faChevronUp} className="collapse__icon" />
-            </button>
-          </div>
+            </span>
+          </summary>
           <div className="collapse__content">
             <p>{content}</p>
           </div>
-        </section>
+        </details>
       ))}
     </div>
   )

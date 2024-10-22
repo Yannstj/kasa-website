@@ -7,7 +7,7 @@ function Card({ logement }) {
       <section className="cardWrapper">
         {logement.map(({ id, cover, title }) => (
           <figure className="card" key={id}>
-            <img src={cover} alt="tempAlt" className="card__cover" />
+            <img src={cover} alt="housing" className="card__cover" />
             <figcaption className="card__title">{title}</figcaption>
           </figure>
         ))}
