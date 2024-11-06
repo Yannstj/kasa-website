@@ -8,9 +8,15 @@ function Collapse({ collapseContent }) {
     <div>
       {collapseContent.map(({ title, content, key }) => (
         <details className="collapse" key={key}>
-          <summary className="collapse__title">
+          <summary
+            className="collapse__title"
+            onClick={(e) => e.preventDefault()}
+          >
             <h2>{title}</h2>
-            <span className="collapse__button">
+            <span
+              className="collapse__button"
+              onClick={(e) => e.stopPropagation()}
+            >
               <FontAwesomeIcon icon={faChevronUp} className="collapse__icon" />
             </span>
           </summary>
