@@ -19,7 +19,7 @@ function Collapse({ collapseContent }) {
             className="collapse__title"
             onClick={(e) => e.preventDefault()}
           >
-            <h2>{title}</h2>
+            <h2 className="collapse__title__content">{title}</h2>
             <span
               className="collapse__button"
               onClick={(e) => {

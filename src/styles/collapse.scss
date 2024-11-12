@@ -2,10 +2,6 @@ $text-color: #ffffff;
 $background-title-color: #ff6060;
 $background-color: #f6f6f6;
 
-h2 {
-  margin-left: 10px;
-}
-
 .collapse {
   font-family: 'Montserrat';
   width: 1240px;
@@ -23,6 +19,9 @@ h2 {
     height: 50px;
     border-radius: 8px;
     z-index: 2;
+    &__content {
+      margin-left: 10px;
+    }
   }
   &__button {
     all: unset;
