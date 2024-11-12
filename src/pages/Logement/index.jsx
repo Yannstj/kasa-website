@@ -1,7 +1,12 @@
+import Slideshow from '../../components/Slideshow'
+import { logementList } from '../../data/logementList'
+
 function Logement() {
-    return (
-        <h1>Logement</h1>
-    )
+  return (
+    <div className="logement">
+      <Slideshow logement={logementList} />
+    </div>
+  )
 }
 
 export default Logement

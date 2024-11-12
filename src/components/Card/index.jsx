@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom'
 import '../../styles/card.scss'
 
 function Card({ logement }) {
@@ -6,10 +7,12 @@ function Card({ logement }) {
     <div className="cardContainer">
       <section className="cardWrapper">
         {logement.map(({ id, cover, title }) => (
-          <figure className="card" key={id}>
-            <img src={cover} alt="housing" className="card__cover" />
-            <figcaption className="card__title">{title}</figcaption>
-          </figure>
+          <NavLink to={`/logement/${id}`} className="">
+            <figure className="card" key={id}>
+              <img src={cover} alt="housing" className="card__cover" />
+              <figcaption className="card__title">{title}</figcaption>
+            </figure>
+          </NavLink>
         ))}
       </section>
     </div>
