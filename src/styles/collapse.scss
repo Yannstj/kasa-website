@@ -23,23 +23,24 @@ h2 {
     height: 50px;
     border-radius: 8px;
     z-index: 2;
-    //order: solid 2px greenyellow;
   }
   &__button {
     all: unset;
     position: absolute;
     left: 1195px;
-    // border: solid 2px purple;
   }
   &__icon {
     font-size: 25px;
+    transition: transform 0.4s ease;
+    &__rotate {
+      transform: rotate(-180deg);
+    }
   }
   &__content {
     display: inline-block;
     width: 100%;
     background-color: $background-color;
     position: relative;
-
     top: -3px;
     border-radius: 0 0 8px 8px;
     z-index: 1;
