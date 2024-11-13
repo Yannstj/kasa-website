@@ -1,3 +1,5 @@
+$arrow-color: #f6f6f6;
+
 .slideshowContainer {
   font-family: 'Montserrat';
   display: flex;
@@ -8,11 +10,31 @@
 }
 
 .carrousel {
+  position: relative;
   &__image {
     width: 1240px;
     height: 480px;
     border-radius: 30px;
     overflow: hidden;
+  }
+  &__left__arrow {
+    position: absolute;
+    top: 210px;
+    font-size: 80px;
+    left: 25px;
+    color: $arrow-color;
+    // position: relative;
+    //top: 100px;
+  }
+  &__right__arrow {
+    position: absolute;
+    top: 210px;
+    font-size: 80px;
+    left: 1170px;
+    color: $arrow-color;
+    //width: 200px;
+    // position: relative;
+    //top: 100px;
   }
   &__tags {
     list-style-type: none;
