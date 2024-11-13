@@ -1,6 +1,22 @@
 .slideshowContainer {
-  width: 1240px;
+  font-family: 'Montserrat';
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 30px;
+  // border: solid black 3px;
+}
+
+.carrousel {
+  &__image {
+    width: 1240px;
+    height: 480px;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+  &__tags {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
 }
