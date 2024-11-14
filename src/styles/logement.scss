@@ -40,17 +40,35 @@ $title-color: #ff6060;
     left: 1170px;
     color: $arrow-color;
   }
-  &__tags {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
 }
 
 .details {
   &__title {
     font-weight: 450;
-    font-size: x-large;
+    font-size: xx-large;
     color: $title-color;
+    padding: 0;
+    margin: 0;
+  }
+  &__location {
+    font-weight: 450;
+    font-size: large;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.details__additional {
+  display: flex;
+  gap: 12px;
+  list-style-type: none;
+  // border: #ff6060 solid 2px;
+  // color: #f6f6f6;
+}
+.tags {
+  padding: 0;
+  margin: 0;
+  &__item {
+    background-color: #ff6060;
   }
 }

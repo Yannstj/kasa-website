@@ -75,10 +75,10 @@ function Slideshow({ logement }) {
 
   return (
     <main className="slideshow">
-      {logement.map(({ id, title, pictures, location, tags }) =>
+      {logement.map(({ id, title, pictures, location, tags, host, rating }) =>
         currentLocation.pathname.includes(`/logement/${id}`) ? (
-          <div>
-            <section className="carrousel" key={id}>
+          <div key={id}>
+            <section className="carrousel">
               <div className="carrousel__image">
                 <img src={pictures[currentIndex]} alt={title} />
                 <FontAwesomeIcon
@@ -94,13 +94,24 @@ function Slideshow({ logement }) {
               </div>
             </section>
             <section className="details">
-              <h1 className="details__title">{title}</h1>
-              <h2 className="details__location">{location}</h2>
-              <ul className="tags">
-                {tags.map((tag, index) => (
-                  <li key={index}>{tag}</li>
-                ))}
-              </ul>
+              <div className="details__main">
+                <h1 className="details__title">{title}</h1>
+                <h2 className="details__location">{location}</h2>
+                <div className="details__owner">
+                  <h3>{host.name}</h3>
+                  <img src={host.picture} alt={host.name} />
+                </div>
+              </div>
+              <div className="details__additional">
+                <ul className="tags">
+                  {tags.map((tag, index) => (
+                    <li key={index} className="tags__item">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+                <span>{rating}</span>
+              </div>
             </section>
           </div>
         ) : null
