@@ -7,8 +7,8 @@ function Card({ logement }) {
     <div className="cardContainer">
       <section className="cardWrapper">
         {logement.map(({ id, cover, title }) => (
-          <NavLink to={`/logement/${id}`} className="">
-            <figure className="card" key={id}>
+          <NavLink to={`/logement/${id}`} className="" key={id}>
+            <figure className="card">
               <img src={cover} alt="housing" className="card__cover" />
               <figcaption className="card__title">{title}</figcaption>
             </figure>
