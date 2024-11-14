@@ -1,21 +1,30 @@
 $arrow-color: #f6f6f6;
+$title-color: #ff6060;
 
-.slideshowContainer {
+.slideshow {
   font-family: 'Montserrat';
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 30px;
-  // border: solid black 3px;
 }
 
 .carrousel {
   position: relative;
   &__image {
-    width: 1240px;
-    height: 480px;
+    width: 1240px; // Utilisation de la largeur disponible
+    height: 440px;
+
     border-radius: 30px;
     overflow: hidden;
+
+    img {
+      width: 100%; // Remplir toute la largeur du conteneur
+      height: 100%; // Adaptation à la hauteur du conteneur
+      display: block;
+      object-fit: cover;
+      transform: scale(1.1);
+    }
   }
   &__left__arrow {
     position: absolute;
@@ -23,8 +32,6 @@ $arrow-color: #f6f6f6;
     font-size: 80px;
     left: 25px;
     color: $arrow-color;
-    // position: relative;
-    //top: 100px;
   }
   &__right__arrow {
     position: absolute;
@@ -32,13 +39,18 @@ $arrow-color: #f6f6f6;
     font-size: 80px;
     left: 1170px;
     color: $arrow-color;
-    //width: 200px;
-    // position: relative;
-    //top: 100px;
   }
   &__tags {
     list-style-type: none;
     padding: 0;
     margin: 0;
+  }
+}
+
+.details {
+  &__title {
+    font-weight: 450;
+    font-size: x-large;
+    color: $title-color;
   }
 }
