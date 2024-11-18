@@ -1,56 +1,4 @@
-// import { useLocation } from 'react-router-dom'
-// // import Collapse from '../../components/Collapse'
-// import { fas } from '@fortawesome/free-solid-svg-icons'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-// import '../../styles/logement.scss'
-
-// function Slideshow({ logement }) {
-
-//   const currentlocation = useLocation()
-
-//   function carrouselSilde(pictures) {
-//     for (let i = 0; i < pictures.lenght; i++) {
-//       let currentPicture = pictures[i]
-//       //return currentPicture
-//       //console.log(i)
-//     }
-//   }
-
-//   return (
-//     <main className="slideshowContainer">
-//       <section>
-//         {logement.map(({ id, title, cover, pictures, location, tags }) =>
-//           currentlocation.pathname.includes(`/logement/${id}`) ? (
-//             <div className="carrousel">
-//               <div className="carrousel__image" key={id}>
-//                 <FontAwesomeIcon
-//                   icon={fas.faChevronLeft}
-//                   className="carrousel__left__arrow"
-//                   onClick={carrouselSilde(pictures)}
-//                 />
-//                 <FontAwesomeIcon
-//                   icon={fas.faChevronRight}
-//                   className="carrousel__right__arrow"
-//                 />
-//                 <img src={cover} alt={title} />
-//               </div>
-
-//               <h1>{title}</h1>
-//               <h2>{location}</h2>
-//               <ul className="carrousel__tags">
-//                 <li>{tags}</li>
-//               </ul>
-//             </div>
-//           ) : null
-//         )}
-//       </section>
-//     </main>
-//   )
-// }
-
-// export default Slideshow
-import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fas, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
@@ -71,6 +19,19 @@ function Slideshow({ logement }) {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? pictures.length - 1 : prevIndex - 1
     )
+  }
+  //Create a Rating component with a condition of display as parameter
+  const Rating = () => (
+    <FontAwesomeIcon className="default__star" icon={faStar} />
+  )
+
+  // Create a function that render star from one color to another using "rating"
+  // data which is a string by default
+
+  const renderMultipleComponents = (Component, count, rate) => {
+    return Array.from({ length: count }).map((_, index) => (
+      <Component key={index} />
+    ))
   }
 
   return (
@@ -95,11 +56,25 @@ function Slideshow({ logement }) {
             </section>
             <section className="details">
               <div className="details__main">
-                <h1 className="details__title">{title}</h1>
-                <h2 className="details__location">{location}</h2>
+                <div className="details__housing">
+                  <h1 className="details__title">{title}</h1>
+                  <h2 className="details__location">{location}</h2>
+                </div>
                 <div className="details__owner">
-                  <h3>{host.name}</h3>
-                  <img src={host.picture} alt={host.name} />
+                  <h3 className="details__owner__name">
+                    <div className="details__owner__name__part">
+                      {host.name.split(' ')[0]}
+                    </div>
+                    <div className="details__owner__name__part details__owner__name__part__test">
+                      {host.name.split(' ')[1]}
+                    </div>
+                  </h3>
+
+                  <img
+                    className="details__owner__picture"
+                    src={host.picture}
+                    alt={host.name}
+                  />
                 </div>
               </div>
               <div className="details__additional">
@@ -110,7 +85,10 @@ function Slideshow({ logement }) {
                     </li>
                   ))}
                 </ul>
-                <span>{rating}</span>
+                <span>
+                  {rating}
+                  {renderMultipleComponents(Rating, 5)}
+                </span>
               </div>
             </section>
           </div>
