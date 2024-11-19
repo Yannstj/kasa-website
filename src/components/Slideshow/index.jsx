@@ -21,16 +21,20 @@ function Slideshow({ logement }) {
     )
   }
   //Create a Rating component with a condition of display as parameter
-  const Rating = () => (
-    <FontAwesomeIcon className="default__star" icon={faStar} />
+  const RatingComponent = ({ isColored }) => (
+    <FontAwesomeIcon
+      className={`default__star ${isColored ? 'colored__star' : ''}`}
+      icon={faStar}
+    />
   )
 
   // Create a function that render star from one color to another using "rating"
   // data which is a string by default
 
-  const renderMultipleComponents = (Component, count, rate) => {
+  const renderStars = (Component, count, rate) => {
+    const numeriseRate = parseInt(rate)
     return Array.from({ length: count }).map((_, index) => (
-      <Component key={index} />
+      <Component key={index} isColored={index < numeriseRate} />
     ))
   }
 
@@ -69,7 +73,6 @@ function Slideshow({ logement }) {
                       {host.name.split(' ')[1]}
                     </div>
                   </h3>
-
                   <img
                     className="details__owner__picture"
                     src={host.picture}
@@ -85,10 +88,9 @@ function Slideshow({ logement }) {
                     </li>
                   ))}
                 </ul>
-                <span>
-                  {rating}
-                  {renderMultipleComponents(Rating, 5)}
-                </span>
+                <div className="starIcon">
+                  {renderStars(RatingComponent, 5, rating)}
+                </div>
               </div>
             </section>
           </div>

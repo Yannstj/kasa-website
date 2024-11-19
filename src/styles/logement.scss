@@ -96,7 +96,6 @@ $default-star-color: #e3e3e3;
   align-items: center;
   margin-top: 15px;
   //gap: 12px;
-  // border: #ff6060 solid 2px;
   // color: #f6f6f6;
 }
 .tags {
@@ -115,6 +114,15 @@ $default-star-color: #e3e3e3;
   }
 }
 
+.starIcon {
+  display: flex;
+  margin-right: 1px;
+  gap: 11px;
+}
 .default__star {
+  font-size: 25px;
   color: $default-star-color;
+}
+.colored__star {
+  color: $title-color;
 }
