@@ -3,9 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import '../../styles/logement.scss'
-import Collapse from '../Collapse'
 
-function Slideshow({ logement }) {
+function Slideshow({ id, title, pictures, location, tags, host, rating }) {
   const currentLocation = useLocation()
   const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -36,101 +35,65 @@ function Slideshow({ logement }) {
   }
   return (
     <main className="slideshow">
-      {logement.map(
-        ({
-          id,
-          title,
-          pictures,
-          location,
-          tags,
-          host,
-          rating,
-          description,
-          equipments,
-        }) =>
-          currentLocation.pathname.includes(`/logement/${id}`) ? (
-            <div key={id}>
-              <section className="carrousel">
-                <div className="carrousel__image">
-                  <img src={pictures[currentIndex]} alt={title} />
-                  <FontAwesomeIcon
-                    icon={fas.faChevronLeft}
-                    className="carrousel__left__arrow"
-                    onClick={() => handlePrevious(pictures)}
-                  />
-                  <FontAwesomeIcon
-                    icon={fas.faChevronRight}
-                    className="carrousel__right__arrow"
-                    onClick={() => handleNext(pictures)}
-                  />
+      {currentLocation.pathname.includes(`/logement/${id}`)}? (
+      <div>
+        <section className="carrousel">
+          <div className="carrousel__image">
+            <img src={pictures[currentIndex]} alt={title} />
+            <FontAwesomeIcon
+              icon={fas.faChevronLeft}
+              className="carrousel__left__arrow"
+              onClick={() => handlePrevious(pictures)}
+            />
+            <FontAwesomeIcon
+              icon={fas.faChevronRight}
+              className="carrousel__right__arrow"
+              onClick={() => handleNext(pictures)}
+            />
+          </div>
+        </section>
+        <section className="details">
+          <div className="details__main">
+            <div className="details__housing">
+              <h1 className="details__title">{title}</h1>
+              <h2 className="details__location">{location}</h2>
+            </div>
+            <div className="details__owner">
+              {/* séparation du nom et prénom avec split */}
+              <h3 className="details__owner__name">
+                <div className="details__owner__name__part">
+                  {host.name.split(' ')[0]}
                 </div>
-              </section>
-              <section className="details">
-                <div className="details__main">
-                  <div className="details__housing">
-                    <h1 className="details__title">{title}</h1>
-                    <h2 className="details__location">{location}</h2>
-                  </div>
-                  <div className="details__owner">
-                    {/* séparation du nom et prénom avec split */}
-                    <h3 className="details__owner__name">
-                      <div className="details__owner__name__part">
-                        {host.name.split(' ')[0]}
-                      </div>
-                      <div className="details__owner__name__part details__owner__name__part__test">
-                        {host.name.split(' ')[1]}
-                      </div>
-                    </h3>
-                    <img
-                      className="details__owner__picture"
-                      src={host.picture}
-                      alt={host.name}
-                    />
-                  </div>
+                <div className="details__owner__name__part details__owner__name__part__test">
+                  {host.name.split(' ')[1]}
                 </div>
-                <div className="details__additional">
-                  <ul className="tags">
-                    {tags.map((tag, index) => (
-                      <li key={index} className="tags__item">
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="starIcon">
-                    {renderStars(RatingComponent, 5, rating)}
-                  </div>
-                </div>
+              </h3>
+              <img
+                className="details__owner__picture"
+                src={host.picture}
+                alt={host.name}
+              />
+            </div>
+          </div>
+          <div className="details__additional">
+            <ul className="tags">
+              {tags.map((tag, index) => (
+                <li key={index} className="tags__item">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+            <div className="starIcon">
+              {renderStars(RatingComponent, 5, rating)}
+            </div>
+          </div>
 
-                {/* .map
+          {/* .map
                   <Mycomponent props1=fuefun props2/>
                 */}
-                <Collapse
-                  className="collapseSideshow"
-                  //use new params for collapse component content
-                  collapseContent={[
-                    {
-                      title: 'Description',
-                      content: <p>{description}</p>,
-                      key: 'description',
-                    },
-                    {
-                      title: 'Équipements',
-                      // mapping equipements to get them all
-                      content: (
-                        <ul>
-                          {equipments.map((equipment, index) => (
-                            <li key={index}>{equipment}</li>
-                          ))}
-                        </ul>
-                      ),
-                      key: 'equipments',
-                    },
-                  ]}
-                />
-              </section>
-            </div>
-          ) : null
-      )}
+        </section>
+      </div>
+      ) : null
     </main>
   )
 }

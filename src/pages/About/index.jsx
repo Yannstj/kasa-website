@@ -7,19 +7,12 @@ import '../../styles/banner.scss'
 
 //About page
 function About() {
-  const aboutCollapse = aboutData.map((about) => (
-    <Collapse
-      title={about.title}
-      content={about.content}
-      key={about.key}
-      //collapseKey={about.key}
-    />
-  ))
-
   return (
     <div className="about">
       <Banner bannerImage={montain} />
-      <div className="collapseContainer">{aboutCollapse}</div>
+      {aboutData.map((about, index) => (
+        <Collapse key={index} title={about.title} content={about.content} />
+      ))}
     </div>
   )
 }
