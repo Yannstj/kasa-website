@@ -5,11 +5,21 @@ import { aboutData } from '../../data/aboutData'
 import '../../styles/about.scss'
 import '../../styles/banner.scss'
 
+//About page
 function About() {
+  const aboutCollapse = aboutData.map((about) => (
+    <Collapse
+      title={about.title}
+      content={about.content}
+      key={about.key}
+      //collapseKey={about.key}
+    />
+  ))
+
   return (
     <div className="about">
       <Banner bannerImage={montain} />
-      <Collapse collapseContent={aboutData} />
+      <div className="collapseContainer">{aboutCollapse}</div>
     </div>
   )
 }
