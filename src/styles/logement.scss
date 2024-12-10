@@ -43,7 +43,7 @@ $default-star-color: #e3e3e3;
 }
 
 .details {
-  //set same as carrousel
+  //set same width as carrousel
   width: 1240px;
   &__main {
     display: flex;
@@ -129,52 +129,43 @@ $default-star-color: #e3e3e3;
   color: $title-color;
 }
 
-.slideshow {
-  .collapseContainer {
-    display: flex;
-    justify-content: space-between;
-    //align-items: center;
-    gap: 80px;
-
-    .collapse {
-      width: 600px;
-      font-size: small;
-      //margin-top: 20px;
-
-      &__title {
-        //width: 100%;
-        background-color: $title-color;
+.collapseContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  .collapse {
+    width: 600px;
+    font-size: small;
+    //margin-top: 20px;
+    &__title {
+      //width: 100%;
+      background-color: $title-color;
+    }
+    &__button {
+      all: unset;
+      position: absolute;
+      left: 530px;
+    }
+    &__icon {
+      font-size: 25px;
+      transition: transform 0.2s ease-in-out;
+      &__rotate {
+        transform: rotate(-180deg);
       }
-
-      &__button {
-        all: unset;
-        position: absolute;
-        left: 530px;
-      }
-      &__icon {
-        font-size: 25px;
-        transition: transform 0.2s ease-in-out;
-        &__rotate {
-          transform: rotate(-180deg);
-        }
-      }
-      &__content {
-        width: auto;
-        display: block;
-        padding: 20px;
-        background-color: #f4f4f4;
-      }
-      &__content p {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        font-weight: 300;
-      }
-      &.open {
-        &__content {
-          max-width: 200px; // Hauteur maximale lors de l'ouverture
-        }
-      }
+    }
+    &__content {
+      width: auto;
+      //height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    &__content p {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      font-weight: 300;
     }
   }
 }

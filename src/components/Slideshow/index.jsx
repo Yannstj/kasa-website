@@ -99,8 +99,9 @@ function Slideshow({
                 {renderStars(RatingComponent, 5, rating)}
               </div>
             </div>
-            <div className="collapseSideshow">
+            <div className="collapseContainer">
               <Collapse
+                className="collapseLogement"
                 key="description"
                 title="Description"
                 content={description}

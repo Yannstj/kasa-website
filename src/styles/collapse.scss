@@ -2,6 +2,8 @@ $text-color: #ffffff;
 $background-title-color: #ff6060;
 $background-color: #f6f6f6;
 
+// this is used for collapse in about page
+
 .collapse {
   font-family: 'Montserrat';
   width: 1240px;
@@ -35,7 +37,7 @@ $background-color: #f6f6f6;
     }
   }
   &__content {
-    display: inline-block;
+    display: flex;
     width: 100%;
     background-color: $background-color;
     position: relative;
