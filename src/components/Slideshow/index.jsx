@@ -86,7 +86,6 @@ function Slideshow({
                 />
               </div>
             </div>
-
             <div className="details__additional">
               <ul className="tags">
                 {tags.map((tag, index) => (
