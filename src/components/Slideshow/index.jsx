@@ -1,7 +1,8 @@
 import { fas, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useState } from 'react'
+import { useNavigate } from 'react-router'
+import { useLocation } from 'react-router-dom'
 import Collapse from '../../components/Collapse'
 import '../../styles/logement.scss'
 
@@ -16,17 +17,9 @@ function Slideshow({
   description,
   equipments,
 }) {
-  const { id: pathId } = useParams() // Récupérer l'ID du paramètre d'URL
-  //const currentLocation = useLocation()
-  const navigate = useNavigate()
+  const currentLocation = useLocation()
   const [currentIndex, setCurrentIndex] = useState(0)
-
-  // Rediriger si l'ID ne correspond pas
-  useEffect(() => {
-    if (pathId !== id) {
-      navigate('/erreur') // Redirige vers la page d'erreur si l'ID ne correspond pas
-    }
-  }, [pathId, id, navigate]) // Ajouter des dépendances pour surveiller l'ID de l'URL
+  let navigate = useNavigate()
 
   function handleNext(pictures) {
     setCurrentIndex((prevIndex) =>
@@ -54,26 +47,28 @@ function Slideshow({
     ))
   }
 
-  // Vérifier si l'ID dans l'URL correspond avant de rendre le contenu
-  if (pathId !== id) {
-    return null // Rien n'est affiché si l'ID ne correspond pas
-  }
-
-  return (
+  return currentLocation.pathname.includes(`/logement/${id}`) ? (
     <main className="slideshow">
       <section className="carrousel">
         <div className="carrousel__image">
           <img src={pictures[currentIndex]} alt={title} />
-          <FontAwesomeIcon
-            icon={fas.faChevronLeft}
-            className="carrousel__left__arrow"
-            onClick={() => handlePrevious(pictures)}
-          />
-          <FontAwesomeIcon
-            icon={fas.faChevronRight}
-            className="carrousel__right__arrow"
-            onClick={() => handleNext(pictures)}
-          />
+          {pictures.length > 1 && (
+            <>
+              <FontAwesomeIcon
+                icon={fas.faChevronLeft}
+                className="carrousel__left__arrow"
+                onClick={() => handlePrevious(pictures)}
+              />
+              <FontAwesomeIcon
+                icon={fas.faChevronRight}
+                className="carrousel__right__arrow"
+                onClick={() => handleNext(pictures)}
+              />
+              <div className="carrousel__index">
+                <p>{`${currentIndex + 1}/${pictures.length}`}</p>
+              </div>
+            </>
+          )}
         </div>
       </section>
       <section className="details">
@@ -87,7 +82,7 @@ function Slideshow({
               <div className="details__owner__name__part">
                 {host.name.split(' ')[0]}
               </div>
-              <div className="details__owner__name__part details__owner__name__part__test">
+              <div className="details__owner__name__part">
                 {host.name.split(' ')[1]}
               </div>
             </h3>
@@ -112,7 +107,6 @@ function Slideshow({
         </div>
         <div className="collapseContainer">
           <Collapse
-            className="collapseLogement"
             key="description"
             title="Description"
             content={description}
@@ -121,6 +115,10 @@ function Slideshow({
         </div>
       </section>
     </main>
+  ) : (
+    () => {
+      navigate('/erreur')
+    }
   )
 }
 

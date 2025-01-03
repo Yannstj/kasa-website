@@ -29,7 +29,7 @@ $default-star-color: #e3e3e3;
   &__left__arrow {
     cursor: pointer;
     position: absolute;
-    top: 210px;
+    top: 205px;
     font-size: 80px;
     left: 25px;
     color: $arrow-color;
@@ -37,10 +37,21 @@ $default-star-color: #e3e3e3;
   &__right__arrow {
     cursor: pointer;
     position: absolute;
-    top: 210px;
+    top: 205px;
     font-size: 80px;
     left: 1170px;
     color: $arrow-color;
+  }
+  &__index {
+    position: absolute;
+    color: $arrow-color;
+    font-weight: 400;
+    //background-color: #ff6060;
+    width: 100%;
+    top: 375px;
+    p {
+      text-align: center;
+    }
   }
 }
 
@@ -139,7 +150,7 @@ $default-star-color: #e3e3e3;
   .collapse {
     width: 600px;
     font-size: small;
-    border: darkblue solid 2px;
+    //border: darkblue solid 2px;
     overflow: hidden;
     //margin-top: 20px;
     &__title {
@@ -172,6 +183,7 @@ $default-star-color: #e3e3e3;
       padding: 0;
       margin: 0;
       font-weight: 300;
+      margin-top: 5px;
     }
     &__content ul {
       // border: solid 2px red;
