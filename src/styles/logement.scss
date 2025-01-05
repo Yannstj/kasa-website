@@ -150,7 +150,6 @@ $default-star-color: #e3e3e3;
   .collapse {
     width: 600px;
     font-size: small;
-    //border: darkblue solid 2px;
     overflow: hidden;
     //margin-top: 20px;
     &__title {
@@ -177,6 +176,7 @@ $default-star-color: #e3e3e3;
       flex-direction: column;
       padding: 20px;
       background-color: #f4f4f4;
+      min-height: 150px;
     }
     &__content p {
       width: 100%;

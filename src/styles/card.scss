@@ -1,45 +1,32 @@
 $main-color: #ffffff;
 $secondary-color: #ff6060;
 
-.cardContainer {
-  width: 1240px;
-  margin-top: 40px;
-  background-color: #f6f6f6;
-  border-radius: 25px;
-}
-.cardWrapper {
+.card {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 43px 43px;
-  gap: 40px;
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0; /*Remove default settings of figure tag*/
-    margin: 0; /*Remove default settings of figure tag*/
-    font-family: 'Montserrat';
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0; /*Remove default settings of figure tag*/
+  margin: 0; /*Remove default settings of figure tag*/
+  font-family: 'Montserrat';
+  width: 355px;
+  height: 355px;
+  overflow: hidden;
+  border-radius: 15px;
+  &__cover {
     width: 355px;
     height: 355px;
-    overflow: hidden;
-    border-radius: 15px;
-    &__cover {
-      width: 355px;
-      height: 355px;
-      position: relative;
-      object-fit: cover;
-    }
-    &__title {
-      color: $main-color;
-      position: absolute;
-      width: 345px;
-      height: 20px;
-      margin-left: 15px;
-      margin-bottom: 60px;
-      font-size: 1.5em;
-      font-weight: bold;
-      background: transparent;
-    }
+    position: relative;
+    object-fit: cover;
+  }
+  &__title {
+    color: $main-color;
+    position: absolute;
+    width: 345px;
+    height: 20px;
+    margin-left: 15px;
+    margin-bottom: 60px;
+    font-size: 1.5em;
+    font-weight: bold;
+    background: transparent;
   }
 }
