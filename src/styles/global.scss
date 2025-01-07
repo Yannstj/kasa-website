@@ -2,20 +2,19 @@
 // >1024 px pour les ordinateurs / >= 768 px tablette /
 // >768 px téléphones (min 320px)
 
-:root {
-  display: flex;
-  justify-content: center;
-  height: 100%;
+body {
+  max-width: 1440px;
+  margin: auto;
 }
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh; /* Hauteur minimum pour couvrir tout l'écran */
+  height: 100vh;
   margin: 0;
   padding: 0;
 }
 .main-content {
-  width: 1440px;
+  width: 100%;
   flex: 1;
 }

@@ -1,17 +1,14 @@
-import Slideshow from '../../components/Slideshow'
-//import Collapse from '../../components/Collapse'
-//import { useEffect } from 'react'
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router'
+import Collapse from '../../components/Collapse'
+import Slideshow from '../../components/Slideshow'
 import { logementList } from '../../data/logementList'
 
 function Logement() {
-  let navigate = useNavigate()
-  let params = useParams()
+  const params = useParams()
   const urlId = params.id
 
-  console.log(urlId)
-
+  let navigate = useNavigate()
   let currentData = []
   logementList.forEach((data) => {
     if (data.id === urlId) {
@@ -19,14 +16,11 @@ function Logement() {
     }
   })
 
-  console.log(currentData)
-
   useEffect(() => {
     if (Array.isArray(currentData)) {
       navigate('/erreur')
     }
   })
-
   return (
     <div className="logement">
       <Slideshow
@@ -38,9 +32,19 @@ function Logement() {
         tags={currentData.tags}
         host={currentData.host}
         rating={currentData.rating}
-        description={currentData.description}
-        equipments={currentData.equipments}
       />
+      <div className="collapseContainer">
+        <Collapse
+          key="description"
+          title="Description"
+          content={currentData.description}
+        />
+        <Collapse
+          key="equipment"
+          title="Équipements"
+          content={currentData.equipments}
+        />
+      </div>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import companyLogo from '../../assets/logo.svg'
 function Footer() {
   return (
     <footer className="footer">
-      <div>
+      <div className="footer-elements">
         <img src={companyLogo} alt="logo de Kasa" className="footer__logo" />
       </div>
       <span className="footer__copyright">

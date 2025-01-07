@@ -2,31 +2,11 @@ import { fas, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import Collapse from '../../components/Collapse'
 import '../../styles/logement.scss'
-function Slideshow({
-  id,
-  title,
-  pictures,
-  location,
-  tags,
-  host,
-  rating,
-  description,
-  equipments,
-}) {
+
+function Slideshow({ id, title, pictures, location, tags, host, rating }) {
   const currentLocation = useLocation()
   const [currentIndex, setCurrentIndex] = useState(0)
-
-  // let navigate = useNavigate()
-
-  // useEffect(() => {
-  //   if (currentLocation.pathname.includes(`/logement/${id}`) === false) {
-  //     // navigate('/erreur')
-  //     console.log(currentLocation.pathname)
-  //     console.log(currentLocation.pathname.includes(`/logement/${id}`))
-  //   }
-  // })
 
   function handleNext(pictures) {
     setCurrentIndex((prevIndex) =>
@@ -79,52 +59,56 @@ function Slideshow({
             )}
           </div>
         </section>
+
         <section className="details">
           <div className="details__main">
             <div className="details__housing">
               <h1 className="details__title">{title}</h1>
               <h2 className="details__location">{location}</h2>
+
+              <div className="tagsContainer">
+                <ul className="tags">
+                  {tags.map((tag, index) => (
+                    <li key={index} className="tags__item">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div className="details__owner">
-              <h3 className="details__owner__name">
-                <div className="details__owner__name__part">
-                  {host.name.split(' ')[0]}
-                </div>
-                <div className="details__owner__name__part">
-                  {host.name.split(' ')[1]}
-                </div>
-              </h3>
-              <img
-                className="details__owner__picture"
-                src={host.picture}
-                alt={host.name}
+            <div className="details__additional">
+              <div className="starIcon">
+                {renderStars(RatingComponent, 5, rating)}
+              </div>
+              <div className="details__owner">
+                <h3 className="details__owner__name">
+                  <div className="details__owner__name__part">
+                    {host.name.split(' ')[0]}
+                  </div>
+                  <div className="details__owner__name__part">
+                    {host.name.split(' ')[1]}
+                  </div>
+                </h3>
+                <img
+                  className="details__owner__picture"
+                  src={host.picture}
+                  alt={host.name}
+                />
+              </div>
+            </div>
+          </div>
+          {/* <div className="collapseContainer">
+              <Collapse
+                key="description"
+                title="Description"
+                content={description}
               />
-            </div>
-          </div>
-          <div className="details__additional">
-            <ul className="tags">
-              {tags.map((tag, index) => (
-                <li key={index} className="tags__item">
-                  {tag}
-                </li>
-              ))}
-            </ul>
-            <div className="starIcon">
-              {renderStars(RatingComponent, 5, rating)}
-            </div>
-          </div>
-          <div className="collapseContainer">
-            <Collapse
-              key="description"
-              title="Description"
-              content={description}
-            />
-            <Collapse
-              key="equipment"
-              title="Équipements"
-              content={equipments}
-            />
-          </div>
+              <Collapse
+                key="equipment"
+                title="Équipements"
+                content={equipments}
+              />
+            </div> */}
         </section>
       </main>
     )
