@@ -104,3 +104,15 @@ $background-color: #f6f6f6;
     }
   }
 }
+
+@media (max-width: 768px) {
+  .collapse {
+    width: 92%;
+    &__button {
+      left: 89%;
+    }
+    &__content p {
+      width: 320px;
+    }
+  }
+}

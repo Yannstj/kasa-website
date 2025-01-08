@@ -22,3 +22,9 @@
     font-size: larger;
   }
 }
+
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 40px;
+  }
+}

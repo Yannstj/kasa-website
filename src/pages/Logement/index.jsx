@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router'
 import Collapse from '../../components/Collapse'
 import Slideshow from '../../components/Slideshow'
 import { logementList } from '../../data/logementList'
+import '../../styles/truelogement.scss'
 
 function Logement() {
   const params = useParams()

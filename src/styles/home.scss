@@ -4,7 +4,7 @@
   align-items: center;
   //justify-content: center;
   // width: 100%;
-  border: salmon 2px solid;
+  //border: salmon 2px solid;
   box-sizing: border-box;
 }
 .cardContainer {
@@ -25,19 +25,20 @@
 }
 
 @media (max-width: 1024px) {
+  // .cardContainer {
+  //   gap: 40px;
+  // }
+}
+
+@media (max-width: 768px) {
+  // .home {
+  //   flex: 1;
+  // }
   .cardContainer {
-    //  display: flex;
-    //  flex-wrap: wrap;
-    // justify-content: center;
-    //align-items: center;
-    // max-width: 85%; // instead of 1240px for responsive
-    //border: 3px green solid;
-    gap: 40px;
-    // padding-top: 38px;
-    //padding-left: 31px;
-    //padding-right: 31px;
-    // margin-top: 40px;
-    // background-color: #f6f6f6;
-    // border-radius: 25px;
+    background-color: white;
+    padding: 0;
+    // border: 3px solid salmon;
+    max-width: 92%;
+    //margin-bottom: 30px;
   }
 }

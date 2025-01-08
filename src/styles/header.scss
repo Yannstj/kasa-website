@@ -34,3 +34,18 @@ header {
     }
   }
 }
+
+@media (max-width: 768px) {
+  header {
+    .navbar {
+      gap: 30px;
+      &__logo {
+        width: 128px;
+      }
+      &__link {
+        font-size: medium;
+        width: 200px;
+      }
+    }
+  }
+}

@@ -78,3 +78,17 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .banner {
+    max-width: 92%;
+    &__title {
+      //font-weight: 100;
+      h1 {
+        font-weight: 700;
+        margin-left: 10px;
+        width: 340px;
+      }
+    }
+  }
+}
