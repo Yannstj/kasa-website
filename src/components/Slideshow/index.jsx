@@ -77,21 +77,21 @@ function Slideshow({ id, title, pictures, location, tags, host, rating }) {
                 </ul>
               </div>
             </div>
-            <div className="details__additional">
+            <div className="details__plus">
               <div className="starIcon">
                 {renderStars(RatingComponent, 5, rating)}
               </div>
-              <div className="details__owner">
-                <h3 className="details__owner__name">
-                  <div className="details__owner__name__part">
+              <div className="details__plus__owner">
+                <h3 className="details__plus__owner__name">
+                  <div className="details__plus__owner__name__part">
                     {host.name.split(' ')[0]}
                   </div>
-                  <div className="details__owner__name__part">
+                  <div className="details__plus__owner__name__part">
                     {host.name.split(' ')[1]}
                   </div>
                 </h3>
                 <img
-                  className="details__owner__picture"
+                  className="details__plus__owner__picture"
                   src={host.picture}
                   alt={host.name}
                 />

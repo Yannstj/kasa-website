@@ -1,10 +1,10 @@
 header {
+  //rather than set width with px better use % for responsive
   width: 85%;
   .navbar {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    //width: 1240px !important;
     &__logo {
       width: 150px;
     }
@@ -34,7 +34,6 @@ header {
     }
   }
 }
-
 @media (max-width: 768px) {
   header {
     .navbar {
