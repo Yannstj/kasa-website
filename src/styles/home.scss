@@ -2,10 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  //justify-content: center;
-  // width: 100%;
-  //border: salmon 2px solid;
-  box-sizing: border-box;
+  //box-sizing: border-box;
 }
 .cardContainer {
   display: flex;
@@ -13,7 +10,6 @@
   justify-content: center;
   align-items: center;
   max-width: 85%; // instead of 1240px for responsive
-  //border: 3px green solid;
   gap: 40px;
   padding-top: 38px;
   padding-bottom: 38px;
@@ -31,14 +27,9 @@
 }
 
 @media (max-width: 768px) {
-  // .home {
-  //   flex: 1;
-  // }
   .cardContainer {
     background-color: white;
     padding: 0;
-    // border: 3px solid salmon;
     max-width: 92%;
-    //margin-bottom: 30px;
   }
 }

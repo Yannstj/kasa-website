@@ -1,5 +1,6 @@
 import { fas, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import '../../styles/logement.scss'
@@ -97,22 +98,19 @@ function Slideshow({ id, title, pictures, location, tags, host, rating }) {
               </div>
             </div>
           </div>
-          {/* <div className="collapseContainer">
-              <Collapse
-                key="description"
-                title="Description"
-                content={description}
-              />
-              <Collapse
-                key="equipment"
-                title="Équipements"
-                content={equipments}
-              />
-            </div> */}
         </section>
       </main>
     )
   )
+}
+
+Slideshow.propTypes = {
+  title: PropTypes.string.isRequired,
+  pictures: PropTypes.array.isRequired,
+  location: PropTypes.string.isRequired,
+  tags: PropTypes.array.isRequired,
+  host: PropTypes.object.isRequired,
+  rating: PropTypes.string.isRequired,
 }
 
 export default Slideshow

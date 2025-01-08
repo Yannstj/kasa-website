@@ -16,7 +16,8 @@ function Card({ id, cover, title }) {
 }
 
 Card.propTypes = {
-  logement: PropTypes.array,
+  cover: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 }
 
 export default Card

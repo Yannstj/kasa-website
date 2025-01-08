@@ -1,12 +1,12 @@
+$text-color: #ffffff;
+$background-title-color: #ff6060;
+$background-color: #f6f6f6;
+
 .about {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-$text-color: #ffffff;
-$background-title-color: #ff6060;
-$background-color: #f6f6f6;
 
 .collapse {
   font-family: 'Montserrat';
@@ -61,46 +61,8 @@ $background-color: #f6f6f6;
 @media (max-width: 1024px) {
   .collapse {
     width: 70%;
-    &__title {
-      // color: $text-color;
-      // background-color: $background-title-color;
-      // position: relative; // if not z-index doesn't work
-      // display: flex;
-      // align-items: center;
-      // width: 100%;
-      // height: 50px;
-      // border-radius: 8px;
-      // z-index: 2;
-      // &__content {
-      //   margin-left: 10px;
-      // }
-    }
     &__button {
-      // all: unset;
-      // position: absolute;
       left: 93%;
-    }
-    &__icon {
-      // cursor: pointer;
-      // font-size: 25px;
-      // transition: transform 0.2s ease-in-out;
-      // &__rotate {
-      //   transform: rotate(-180deg);
-      // }
-    }
-    &__content {
-      // display: flex;
-      // width: 100%;
-      // background-color: $background-color;
-      // position: relative;
-      // top: -6px;
-      // border-radius: 0 0 8px 8px;
-      //z-index: 1;
-    }
-    &__content p {
-      //width: 880px;
-      //margin-left: 15px;
-      //font-weight: 300;
     }
   }
 }
