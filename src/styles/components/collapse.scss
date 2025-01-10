@@ -1,0 +1,209 @@
+// $text-color: #ff6060;
+// $arrow-color: #f6f6f6;
+$title-color: #ff6060;
+// $default-star-color: #e3e3e3;
+$text-color: #ffffff;
+$background-title-color: #ff6060;
+$background-color: #f6f6f6;
+
+.collapseContainer {
+  display: flex;
+  width: 85%;
+  margin: auto; // importante propriete
+  gap: 5em;
+  .collapse {
+    font-size: small;
+    overflow: hidden;
+    &__title {
+      background-color: $title-color;
+    }
+    &__button {
+      all: unset;
+      position: absolute;
+      left: 92%;
+    }
+    &__icon {
+      font-size: 25px;
+      transition: transform 0.2s ease-in-out;
+      &__rotate {
+        transform: rotate(-180deg);
+      }
+    }
+    &__content {
+      width: auto;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      background-color: #f4f4f4;
+      min-height: 150px;
+    }
+    &__content p {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      font-weight: 300;
+      margin-top: 5px;
+    }
+    &__content ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      font-weight: 350;
+    }
+    &__content li {
+      margin-top: 5px;
+    }
+  }
+}
+
+/// CSS qui etait pour collapse aboout page
+.collapse {
+  font-family: 'Montserrat';
+  width: 77%;
+  border-radius: 12px;
+  position: relative;
+  margin-top: 30px;
+  &__title {
+    color: $text-color;
+    background-color: $background-title-color;
+    position: relative; // if not z-index doesn't work
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    z-index: 2;
+    &__content {
+      margin-left: 10px;
+    }
+  }
+  &__button {
+    all: unset;
+    position: absolute;
+    left: 95%;
+  }
+  &__icon {
+    cursor: pointer;
+    font-size: 25px;
+    transition: transform 0.2s ease-in-out;
+    &__rotate {
+      transform: rotate(-180deg);
+    }
+  }
+  &__content {
+    display: flex;
+    width: 100%;
+    background-color: $background-color;
+    position: relative;
+    top: -6px;
+    border-radius: 0 0 8px 8px;
+    z-index: 1;
+  }
+  &__content p {
+    width: 880px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-weight: 300;
+  }
+}
+
+// // Responsives media querys
+// @media (max-width: 1024px) {
+//   .carrousel {
+//     &__right__arrow {
+//       left: 92.6%;
+//     }
+//   }
+//   .collapseContainer {
+//     gap: 3em;
+//   }
+// }
+// // specific case
+// //@media (max-width: 924px) {
+// @media (max-width: 924px) {
+//   .carrousel {
+//     &__right__arrow {
+//       left: 92%;
+//     }
+//   }
+//   .collapseContainer {
+//     .collapse {
+//       &__button {
+//         left: 90%;
+//       }
+//     }
+//   }
+//   .tags {
+//     flex-wrap: wrap;
+//   }
+// }
+// @media (max-width: 768px) {
+//   .carrousel {
+//     width: 92%;
+
+//     &__image {
+//       height: 330px;
+//     }
+
+//     &__left__arrow,
+//     &__right__arrow {
+//       font-size: 45px;
+//     }
+
+//     &__index {
+//       display: none;
+//     }
+//   }
+//   .collapseContainer {
+//     width: 100%;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 0;
+//   }
+// }
+
+// // Responsives media querys
+// @media (max-width: 1024px) {
+//   .collapse {
+//     width: 70%;
+//     &__button {
+//       left: 93%;
+//     }
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .collapse {
+//     width: 92%;
+//     &__button {
+//       left: 89%;
+//     }
+//     &__content p {
+//       width: 320px;
+//     }
+//   }
+// }
+
+// code etait dans slideshow (ancien logement)
+@media (max-width: 1024px) {
+  .collapseContainer {
+    gap: 3em;
+  }
+}
+
+// specific case
+@media (max-width: 924px) {
+  .collapseContainer {
+    .collapse {
+      &__button {
+        left: 90%;
+      }
+    }
+  }
+}
+@media (max-width: 471px) {
+  .collapseContainer {
+    width: 100%;
+  }
+}

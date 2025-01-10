@@ -1,5 +1,6 @@
 import companyLogo from '../../assets/logo.svg'
-
+//import '../../src/styles/components/footer.scss'
+import '../../styles/components/footer.scss'
 function Footer() {
   return (
     <footer className="footer">

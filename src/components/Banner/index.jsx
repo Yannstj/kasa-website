@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import '../../styles/banner.scss'
+import '../../styles/components/banner.scss'
 
 function Banner({ bannerImage }) {
   const location = useLocation()

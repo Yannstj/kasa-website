@@ -1,5 +1,6 @@
 $text-color: #ff6060;
 $navlink-color: #000000;
+$text-color: #ff6060;
 
 .errorContainer {
   font-family: 'Montserrat';
@@ -22,13 +23,14 @@ $navlink-color: #000000;
       margin-bottom: 100px;
       text-align: center;
     }
+
     &__navlink {
       color: $navlink-color;
       font-size: medium;
     }
   }
 }
-
+// Responsives media querys
 @media (max-width: 1024px) {
   .errorContainer {
     .error {

@@ -1,9 +1,7 @@
 import React from 'react'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import '../src/index.scss'
-import '../src/styles/footer.scss'
-import '../src/styles/global.scss'
-import '../src/styles/header.scss'
+
 import Footer from './components/Footer'
 import Header from './components/Header'
 import About from './pages/About'

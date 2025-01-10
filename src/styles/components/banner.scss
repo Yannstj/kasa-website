@@ -40,10 +40,10 @@
   }
 }
 
+// Responsives media querys
 @media (max-width: 1024px) {
   .banner {
     height: 200px;
-
     &__title {
       font-size: 18px;
     }

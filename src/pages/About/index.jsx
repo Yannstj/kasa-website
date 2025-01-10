@@ -2,10 +2,9 @@ import montain from '../../assets/banner-montain.jpg'
 import Banner from '../../components/Banner'
 import Collapse from '../../components/Collapse'
 import { aboutData } from '../../data/aboutData'
-import '../../styles/about.scss'
-import '../../styles/banner.scss'
+//import '../../styles/banner.scss'
+import '../../styles/pages/about.scss'
 
-//About page
 function About() {
   return (
     <div className="about">

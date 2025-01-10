@@ -1,11 +1,12 @@
-import { fas, faStar } from '@fortawesome/free-solid-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import '../../styles/logement.scss'
+import '../../styles/components/slideshow.scss'
+//
 
-function Slideshow({ id, title, pictures, location, tags, host, rating }) {
+function Slideshow({ id, title, pictures }) {
   const currentLocation = useLocation()
   const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -19,20 +20,6 @@ function Slideshow({ id, title, pictures, location, tags, host, rating }) {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? pictures.length - 1 : prevIndex - 1
     )
-  }
-
-  const RatingComponent = ({ isColored }) => (
-    <FontAwesomeIcon
-      className={`default__star ${isColored ? 'colored__star' : ''}`}
-      icon={faStar}
-    />
-  )
-
-  const renderStars = (Component, count, rate) => {
-    const numeriseRate = parseInt(rate)
-    return Array.from({ length: count }).map((_, index) => (
-      <Component key={index} isColored={index < numeriseRate} />
-    ))
   }
 
   return (
@@ -60,57 +47,15 @@ function Slideshow({ id, title, pictures, location, tags, host, rating }) {
             )}
           </div>
         </section>
-
-        <section className="details">
-          <div className="details__main">
-            <div className="details__housing">
-              <h1 className="details__title">{title}</h1>
-              <h2 className="details__location">{location}</h2>
-
-              <div className="tagsContainer">
-                <ul className="tags">
-                  {tags.map((tag, index) => (
-                    <li key={index} className="tags__item">
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="details__plus">
-              <div className="starIcon">
-                {renderStars(RatingComponent, 5, rating)}
-              </div>
-              <div className="details__plus__owner">
-                <h3 className="details__plus__owner__name">
-                  <div className="details__plus__owner__name__part">
-                    {host.name.split(' ')[0]}
-                  </div>
-                  <div className="details__plus__owner__name__part">
-                    {host.name.split(' ')[1]}
-                  </div>
-                </h3>
-                <img
-                  className="details__plus__owner__picture"
-                  src={host.picture}
-                  alt={host.name}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     )
   )
 }
 
 Slideshow.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   pictures: PropTypes.array.isRequired,
-  location: PropTypes.string.isRequired,
-  tags: PropTypes.array.isRequired,
-  host: PropTypes.object.isRequired,
-  rating: PropTypes.string.isRequired,
 }
 
 export default Slideshow

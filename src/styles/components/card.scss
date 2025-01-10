@@ -41,6 +41,8 @@ $secondary-color: #ff6060;
   }
 }
 
+// Responsives media querys
+// Specific case
 @media (max-width: 1170px) {
   .cardWrapper {
     width: 27%;
@@ -54,12 +56,12 @@ $secondary-color: #ff6060;
     }
   }
 }
-
 @media (max-width: 1024px) {
   .card {
     height: 265px;
   }
 }
+//specific case card adaptation
 @media (max-width: 924px) {
   .card {
     height: 252px;

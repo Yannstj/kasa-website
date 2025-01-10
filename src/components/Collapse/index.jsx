@@ -2,6 +2,7 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import { useState } from 'react'
+import '../../styles/components/collapse.scss'
 
 function Collapse({ title, content }) {
   const [isOpen, setIsOpen] = useState(false)
