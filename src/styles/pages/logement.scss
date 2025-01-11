@@ -103,7 +103,7 @@ $default-star-color: #e3e3e3;
     gap: 3em;
   }
 }
-
+// specific case
 @media (max-width: 924px) {
   .tags {
     flex-wrap: wrap;

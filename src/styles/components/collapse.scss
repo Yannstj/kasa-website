@@ -82,7 +82,7 @@ $background-color: #f6f6f6;
   }
 }
 
-@media (max-width: 924px) {
+@media (max-width: 1024px) {
   .collapse {
     &__button {
       &__flexrow {
@@ -91,79 +91,6 @@ $background-color: #f6f6f6;
     }
   }
 }
-
-//page logement
-// .collapse {
-//   width: 77%;
-//   border: 2px solid blue;
-//   font-size: small;
-//   overflow: hidden;
-//   &__title {
-//     background-color: $title-color;
-//   }
-//   &__button {
-//     all: unset;
-//     position: absolute;
-//     left: 92%;
-//   }
-//   &__content {
-//     width: auto;
-//     height: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     padding: 20px;
-//     background-color: #f4f4f4;
-//     min-height: 150px;
-//   }
-//   &__content p {
-//     width: 100%;
-//     padding: 0;
-//     margin: 0;
-//     font-weight: 300;
-//     margin-top: 5px;
-//   }
-//   &__content ul {
-//     list-style-type: none;
-//     margin: 0;
-//     padding: 0;
-//     font-weight: 350;
-//   }
-//   &__content li {
-//     margin-top: 5px;
-//   }
-// }
-
-// // Responsives media querys
-// // specific case
-// //@media (max-width: 924px) {
-// @media (max-width: 924px) {
-//   .carrousel {
-//     &__right__arrow {
-//       left: 92%;
-//     }
-//   }
-//   .collapseContainer {
-//     .collapse {
-//       &__button {
-//         left: 90%;
-//       }
-//     }
-//   }
-//   .tags {
-//     flex-wrap: wrap;
-//   }
-// }
-
-// // Responsives media querys
-@media (max-width: 1024px) {
-  .collapse {
-    width: 70%;
-    &__button {
-      left: 93%;
-    }
-  }
-}
-
 @media (max-width: 768px) {
   .collapse {
     width: 92%;
