@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import '../../styles/components/collapse.scss'
 
-function Collapse({ title, content }) {
+function Collapse({ title, content, containerDisplay = 'column' }) {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleCollapse = () => {
@@ -15,7 +15,12 @@ function Collapse({ title, content }) {
     <div className="collapse">
       <div className="collapse__title">
         <h2 className="collapse__title__content">{title}</h2>
-        <span className="collapse__button" onClick={toggleCollapse}>
+        <span
+          className={`collapse__button ${
+            containerDisplay === 'row' ? 'collapse__button__flexrow' : ''
+          }`}
+          onClick={toggleCollapse}
+        >
           <FontAwesomeIcon
             icon={faChevronUp}
             className={`collapse__icon ${
@@ -27,7 +32,11 @@ function Collapse({ title, content }) {
       {/* here we use ternery operateur because there is basically two states, 
       but if we had to deal with more better use a function instead */}
       {isOpen && (
-        <div className="collapse__content">
+        <div
+          className={`collapse__content ${
+            containerDisplay === 'row' ? 'collapse__content__flexrow' : ''
+          }`}
+        >
           {typeof content === 'string' ? (
             <p>{content}</p>
           ) : Array.isArray(content) ? (

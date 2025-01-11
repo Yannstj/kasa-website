@@ -2,34 +2,14 @@ $text-color: #ffffff;
 $background-title-color: #ff6060;
 $background-color: #f6f6f6;
 
-$text-color: #ff6060;
-$arrow-color: #f6f6f6;
-$title-color: #ff6060;
-$default-star-color: #e3e3e3;
 .about {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-// Responsives media querys
-@media (max-width: 1024px) {
-  .collapse {
-    width: 70%;
-    &__button {
-      left: 93%;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .collapse {
-    width: 92%;
-    &__button {
-      left: 89%;
-    }
-    &__content p {
-      width: 320px;
-    }
-  }
+.collapseContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }

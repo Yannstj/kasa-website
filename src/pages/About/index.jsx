@@ -9,9 +9,11 @@ function About() {
   return (
     <div className="about">
       <Banner bannerImage={montain} />
-      {aboutData.map((about, index) => (
-        <Collapse key={index} title={about.title} content={about.content} />
-      ))}
+      <div className="collapseContainer">
+        {aboutData.map((about, index) => (
+          <Collapse key={index} title={about.title} content={about.content} />
+        ))}
+      </div>
     </div>
   )
 }

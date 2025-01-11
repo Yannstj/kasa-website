@@ -9,7 +9,6 @@ $default-star-color: #e3e3e3;
   align-items: center;
   .details {
     width: 85%;
-    //set same width as carrousel
     &__main {
       display: flex;
       justify-content: space-between;
@@ -89,6 +88,22 @@ $default-star-color: #e3e3e3;
     color: $title-color;
   }
 }
+
+.collapseContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 85%;
+  margin: auto; // importante propriete pour resp ?
+  gap: 5em;
+}
+
+@media (max-width: 1024px) {
+  .collapseContainer {
+    gap: 3em;
+  }
+}
+
 @media (max-width: 924px) {
   .tags {
     flex-wrap: wrap;
@@ -96,8 +111,6 @@ $default-star-color: #e3e3e3;
 }
 @media (max-width: 768px) {
   .logement {
-    //width: 100%;
-
     .details {
       width: 92%;
       flex-wrap: wrap;
@@ -111,14 +124,22 @@ $default-star-color: #e3e3e3;
         height: 50px;
       }
     }
-
     .starIcon .default__star {
       font-size: 15px;
     }
   }
+  .collapseContainer {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
 }
 
 @media (max-width: 471px) {
+  .collapseContainer {
+    width: 100%;
+  }
   .tags {
     flex-wrap: wrap;
     gap: 8px;

@@ -5,12 +5,12 @@ import { useNavigate, useParams } from 'react-router'
 import Collapse from '../../components/Collapse'
 import Slideshow from '../../components/Slideshow'
 import { logementList } from '../../data/logementList'
-
 import '../../styles/pages/logement.scss'
 
 function Logement() {
   let navigate = useNavigate()
   let currentData = []
+
   const params = useParams()
   const urlId = params.id
 
@@ -89,11 +89,13 @@ function Logement() {
           key="description"
           title="Description"
           content={currentData.description}
+          containerDisplay="row"
         />
         <Collapse
           key="equipment"
           title="Équipements"
           content={currentData.equipments}
+          containerDisplay="row"
         />
       </div>
     </div>
