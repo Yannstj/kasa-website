@@ -54,10 +54,11 @@
     max-width: 92%;
     height: 160px;
     &__title {
+      justify-content: flex-start;
       font-size: 16px;
       h1 {
         font-weight: 670;
-        margin-left: 10px;
+        margin-left: 30px;
         width: 280px;
       }
     }
