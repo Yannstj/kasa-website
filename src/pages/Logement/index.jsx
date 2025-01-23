@@ -10,28 +10,29 @@ import '../../styles/pages/logement.scss'
 
 function Logement() {
   let navigate = useNavigate()
-  let currentData = []
+  let currentData = null
 
   const params = useParams()
   const urlId = params.id
+  // Trouver les données correspondantes
+  currentData = logementList.find((data) => data.id === urlId)
 
-  logementList.forEach((data) => {
-    if (data.id === urlId) {
-      currentData = data
+  useEffect(() => {
+    // Si aucune donnée n'est trouvée, redirige vers la page d'erreur
+    if (!currentData) {
+      navigate('/erreur')
     }
-  })
+  }, [currentData, navigate])
 
+  // Si currentData est null (en attente de redirection), retourner null
+  if (!currentData) {
+    return null
+  }
   const rate = parseInt(currentData.rating)
-
   const stars = Array.from({ length: 5 }, (_, index) => (
     <Star key={index} isColored={index < rate} />
   ))
 
-  useEffect(() => {
-    if (Array.isArray(currentData)) {
-      navigate('/erreur')
-    }
-  })
   return (
     <div className="logement">
       <Slideshow
