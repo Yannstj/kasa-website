@@ -74,33 +74,24 @@ $default-star-color: #e3e3e3;
       }
     }
   }
-
-  .starIcon {
+  .collapseContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 85%;
+    margin: auto; // importante propriete pour resp ?
+    gap: 5em;
+  }
+  .ratingContainer {
     display: flex;
     margin-right: 1px;
     gap: 11px;
   }
-  .default__star {
-    font-size: 25px;
-    color: $default-star-color;
-  }
-  .colored__star {
-    color: $title-color;
-  }
-}
-
-.collapseContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  width: 85%;
-  margin: auto; // importante propriete pour resp ?
-  gap: 5em;
 }
 
 @media (max-width: 1024px) {
   .collapseContainer {
-    gap: 3em;
+    //gap: 2em;
   }
 }
 // specific case
@@ -127,18 +118,20 @@ $default-star-color: #e3e3e3;
     .starIcon .default__star {
       font-size: 15px;
     }
-  }
-  .collapseContainer {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
+    .collapseContainer {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
   }
 }
 
 @media (max-width: 471px) {
-  .collapseContainer {
-    width: 100%;
+  .logement {
+    .collapseContainer {
+      width: 100%;
+    }
   }
   .tags {
     flex-wrap: wrap;

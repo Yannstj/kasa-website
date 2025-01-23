@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import '../../styles/components/slideshow.scss'
-//
 
 function Slideshow({ id, title, pictures }) {
   const currentLocation = useLocation()

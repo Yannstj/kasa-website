@@ -2,7 +2,6 @@ import montain from '../../assets/banner-montain.jpg'
 import Banner from '../../components/Banner'
 import Collapse from '../../components/Collapse'
 import { aboutData } from '../../data/aboutData'
-//import '../../styles/banner.scss'
 import '../../styles/pages/about.scss'
 
 function About() {
@@ -11,7 +10,12 @@ function About() {
       <Banner bannerImage={montain} />
       <div className="collapseContainer">
         {aboutData.map((about, index) => (
-          <Collapse key={index} title={about.title} content={about.content} />
+          <Collapse
+            key={index}
+            title={about.title}
+            content={about.content}
+            containerDisplay="column"
+          />
         ))}
       </div>
     </div>

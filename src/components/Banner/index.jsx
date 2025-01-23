@@ -15,7 +15,7 @@ function Banner({ bannerImage }) {
         <div className="banner__overlay"></div>
       </div>
       <div className={`${location.pathname === '/' ? `banner__title` : ''}`}>
-        <h1>Chez vous partous ailleurs</h1>
+        <h1>Chez vous, partous ailleurs</h1>
       </div>
     </div>
   )

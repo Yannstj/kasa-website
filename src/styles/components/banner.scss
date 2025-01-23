@@ -52,12 +52,13 @@
 @media (max-width: 768px) {
   .banner {
     max-width: 92%;
-    height: 185px;
+    height: 160px;
     &__title {
+      font-size: 16px;
       h1 {
-        font-weight: 690;
+        font-weight: 670;
         margin-left: 10px;
-        width: 340px;
+        width: 280px;
       }
     }
   }

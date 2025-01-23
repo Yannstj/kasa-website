@@ -1,9 +1,10 @@
-import { faStar } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//import { faStar } from '@fortawesome/free-solid-svg-icons'
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import Collapse from '../../components/Collapse'
 import Slideshow from '../../components/Slideshow'
+import Star from '../../components/Star'
 import { logementList } from '../../data/logementList'
 import '../../styles/pages/logement.scss'
 
@@ -14,24 +15,17 @@ function Logement() {
   const params = useParams()
   const urlId = params.id
 
-  const RatingComponent = ({ isColored }) => (
-    <FontAwesomeIcon
-      className={`default__star ${isColored ? 'colored__star' : ''}`}
-      icon={faStar}
-    />
-  )
-
-  const renderStars = (Component, count, rate) => {
-    const numeriseRate = parseInt(rate)
-    return Array.from({ length: count }).map((_, index) => (
-      <Component key={index} isColored={index < numeriseRate} />
-    ))
-  }
   logementList.forEach((data) => {
     if (data.id === urlId) {
       currentData = data
     }
   })
+
+  const rate = parseInt(currentData.rating)
+
+  const stars = Array.from({ length: 5 }, (_, index) => (
+    <Star key={index} isColored={index < rate} />
+  ))
 
   useEffect(() => {
     if (Array.isArray(currentData)) {
@@ -63,9 +57,7 @@ function Logement() {
             </div>
           </div>
           <div className="details__plus">
-            <div className="starIcon">
-              {renderStars(RatingComponent, 5, currentData.rating)}
-            </div>
+            <div className="ratingContainer">{stars}</div>
             <div className="details__plus__owner">
               <h3 className="details__plus__owner__name">
                 <div className="details__plus__owner__name__part">

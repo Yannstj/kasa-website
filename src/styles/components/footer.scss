@@ -25,6 +25,9 @@
 // Responsives media querys
 @media (max-width: 768px) {
   .footer {
-    margin-top: 40px;
+    padding-top: 50px;
+    &__copyright {
+      padding-bottom: 50px;
+    }
   }
 }

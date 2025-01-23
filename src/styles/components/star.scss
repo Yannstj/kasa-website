@@ -1,0 +1,16 @@
+$default-star-color: #e3e3e3;
+$title-color: #ff6060;
+
+.star {
+  font-size: 25px;
+  color: $default-star-color;
+  &__colored {
+    color: $title-color;
+  }
+}
+
+@media (max-width: 768px) {
+  .star {
+    font-size: 18px;
+  }
+}
