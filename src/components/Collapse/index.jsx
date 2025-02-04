@@ -31,23 +31,23 @@ function Collapse({ title, content, containerDisplay = 'column' }) {
       </div>
       {/* here we use ternery operateur because there is basically two states, 
       but if we had to deal with more better use a function instead */}
-      {isOpen && (
-        <div
-          className={`collapse__content ${
-            containerDisplay === 'row' ? 'collapse__content__flexrow' : ''
-          }`}
-        >
-          {typeof content === 'string' ? (
-            <p>{content}</p>
-          ) : Array.isArray(content) ? (
-            <ul className="collapse__list">
-              {content.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          ) : null}
-        </div>
-      )}
+      {/* {isOpen && ( */}
+      <div
+        className={`collapse__content ${isOpen ? 'opened' : ''} ${
+          containerDisplay === 'row' ? 'collapse__content__flexrow' : ''
+        }`}
+      >
+        {typeof content === 'string' ? (
+          <p>{content}</p>
+        ) : Array.isArray(content) ? (
+          <ul className="collapse__list">
+            {content.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        ) : null}
+      </div>
+      {/* )} */}
     </div>
   )
 }

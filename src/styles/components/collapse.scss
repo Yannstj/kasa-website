@@ -11,7 +11,7 @@ $background-color: #f6f6f6;
   &__title {
     color: $text-color;
     background-color: $background-title-color;
-    position: relative; // if not z-index doesn't work
+    position: relative; // if not, z-index doesn't work
     display: flex;
     align-items: center;
     width: 100%;
@@ -30,7 +30,6 @@ $background-color: #f6f6f6;
       left: 92%;
     }
   }
-
   &__icon {
     cursor: pointer;
     font-size: 25px;
@@ -45,8 +44,18 @@ $background-color: #f6f6f6;
     background-color: $background-color;
     position: relative;
     top: -6px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
     border-radius: 0 0 8px 8px;
     z-index: 1;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    &.opened {
+      opacity: 1;
+      min-height: 150px;
+      max-height: 300px;
+      // car height auto ne fonctionne pas avec les animation
+    }
     p {
       width: 90%;
       margin-left: 15px;
@@ -55,9 +64,11 @@ $background-color: #f6f6f6;
     }
     &__flexrow {
       width: auto;
-      min-height: 150px;
       flex-direction: column;
       padding: 20px;
+      &.opened {
+        max-height: 300px;
+      }
       p {
         width: 100%;
         padding: 0;
