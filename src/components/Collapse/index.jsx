@@ -4,13 +4,17 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import '../../styles/components/collapse.scss'
 
-function Collapse({ title, content, containerDisplay = 'column' }) {
+function Collapse({
+  title,
+  content,
+  containerDisplay = 'column',
+  cssProp,
+  cssOpen,
+}) {
   const [isOpen, setIsOpen] = useState(false)
-
   const toggleCollapse = () => {
     setIsOpen(!isOpen)
   }
-
   return (
     <div className="collapse">
       <div className="collapse__title">
@@ -31,10 +35,8 @@ function Collapse({ title, content, containerDisplay = 'column' }) {
       </div>
       {/* here we use ternery operateur because there is basically two states, 
       but if we had to deal with more better use a function instead */}
-      {/* {isOpen && ( */}
       <div
-        className={`collapse__content ${isOpen ? 'opened' : ''} ${
-          containerDisplay === 'row' ? 'collapse__content__flexrow' : ''
+        className={`${cssProp} ${isOpen ? cssOpen : ''}
         }`}
       >
         {typeof content === 'string' ? (
@@ -47,7 +49,6 @@ function Collapse({ title, content, containerDisplay = 'column' }) {
           </ul>
         ) : null}
       </div>
-      {/* )} */}
     </div>
   )
 }
@@ -58,6 +59,9 @@ Collapse.propTypes = {
     PropTypes.string, // Une chaîne de caractères
     PropTypes.arrayOf(PropTypes.node), // Un tableau d'éléments React ou de chaînes
   ]).isRequired,
+  containerDisplay: PropTypes.string.isRequired,
+  cssProp: PropTypes.string.isRequired,
+  cssOpen: PropTypes.string.isRequired,
 }
 
 export default Collapse

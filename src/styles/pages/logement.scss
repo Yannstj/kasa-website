@@ -77,7 +77,8 @@ $default-star-color: #e3e3e3;
   .collapseContainer {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    //align-items: flex-start;
+    align-items: stretch;
     width: 85%;
     margin: auto; // importante propriete pour resp ?
     gap: 5em;

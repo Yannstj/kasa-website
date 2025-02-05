@@ -15,6 +15,8 @@ function About() {
             title={about.title}
             content={about.content}
             containerDisplay="column"
+            cssProp="collapse__column"
+            cssOpen="columnOpen"
           />
         ))}
       </div>

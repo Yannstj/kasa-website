@@ -81,12 +81,16 @@ function Logement() {
           title="Description"
           content={currentData.description}
           containerDisplay="row"
+          cssProp="collapse__row"
+          cssOpen="rowOpen"
         />
         <Collapse
           key="equipment"
           title="Équipements"
           content={currentData.equipments}
           containerDisplay="row"
+          cssProp="collapse__row"
+          cssOpen="rowOpen"
         />
       </div>
     </div>
