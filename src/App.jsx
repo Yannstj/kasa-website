@@ -1,5 +1,6 @@
 import React from 'react'
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import { Route, HashRouter as Router, Routes } from 'react-router-dom'
+// Default was BrowserRouter but it doesn't work for github page and send 404 first
 import '../src/index.scss'
 import Footer from './components/Footer'
 import Header from './components/Header'
