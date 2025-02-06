@@ -30,6 +30,7 @@ function Logement() {
   const stars = Array.from({ length: 5 }, (_, index) => (
     <Star key={index} isColored={index < rate} />
   ))
+  // 1st parameter est l'elemnt actuel du tableau (qui n'est pas néssesaire ici)
 
   return (
     <div className="logement">
