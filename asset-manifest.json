@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/kasa-website/static/css/main.b257a546.chunk.css",
-    "main.js": "/kasa-website/static/js/main.764f5e1c.chunk.js",
-    "main.js.map": "/kasa-website/static/js/main.764f5e1c.chunk.js.map",
-    "runtime-main.js": "/kasa-website/static/js/runtime-main.dd56baed.js",
-    "runtime-main.js.map": "/kasa-website/static/js/runtime-main.dd56baed.js.map",
-    "static/js/2.be3479ce.chunk.js": "/kasa-website/static/js/2.be3479ce.chunk.js",
-    "static/js/2.be3479ce.chunk.js.map": "/kasa-website/static/js/2.be3479ce.chunk.js.map",
-    "index.html": "/kasa-website/index.html",
-    "static/css/main.b257a546.chunk.css.map": "/kasa-website/static/css/main.b257a546.chunk.css.map",
-    "static/js/2.be3479ce.chunk.js.LICENSE.txt": "/kasa-website/static/js/2.be3479ce.chunk.js.LICENSE.txt",
-    "static/media/banner-cliff.f00ea556.jpg": "/kasa-website/static/media/banner-cliff.f00ea556.jpg",
-    "static/media/banner-montain.144245b0.jpg": "/kasa-website/static/media/banner-montain.144245b0.jpg",
-    "static/media/logo.69a3df08.svg": "/kasa-website/static/media/logo.69a3df08.svg"
+    "main.css": "/react-github-pages/static/css/main.b257a546.chunk.css",
+    "main.js": "/react-github-pages/static/js/main.764f5e1c.chunk.js",
+    "main.js.map": "/react-github-pages/static/js/main.764f5e1c.chunk.js.map",
+    "runtime-main.js": "/react-github-pages/static/js/runtime-main.34c6f33d.js",
+    "runtime-main.js.map": "/react-github-pages/static/js/runtime-main.34c6f33d.js.map",
+    "static/js/2.be3479ce.chunk.js": "/react-github-pages/static/js/2.be3479ce.chunk.js",
+    "static/js/2.be3479ce.chunk.js.map": "/react-github-pages/static/js/2.be3479ce.chunk.js.map",
+    "index.html": "/react-github-pages/index.html",
+    "static/css/main.b257a546.chunk.css.map": "/react-github-pages/static/css/main.b257a546.chunk.css.map",
+    "static/js/2.be3479ce.chunk.js.LICENSE.txt": "/react-github-pages/static/js/2.be3479ce.chunk.js.LICENSE.txt",
+    "static/media/banner-cliff.f00ea556.jpg": "/react-github-pages/static/media/banner-cliff.f00ea556.jpg",
+    "static/media/banner-montain.144245b0.jpg": "/react-github-pages/static/media/banner-montain.144245b0.jpg",
+    "static/media/logo.69a3df08.svg": "/react-github-pages/static/media/logo.69a3df08.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.dd56baed.js",
+    "static/js/runtime-main.34c6f33d.js",
     "static/js/2.be3479ce.chunk.js",
     "static/css/main.b257a546.chunk.css",
     "static/js/main.764f5e1c.chunk.js"
