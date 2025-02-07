@@ -16,6 +16,10 @@ function Logement() {
   currentData = logementList.find((data) => data.id === urlId)
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
     // Si aucune donnée n'est trouvée, redirige vers la page d'erreur
     if (!currentData) {
       navigate('/erreur')
